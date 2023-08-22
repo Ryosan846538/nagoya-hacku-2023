@@ -14,7 +14,14 @@ results.each do |row|
     progress: row[2]
   }
   data << item_hash
-  puts "ID: #{row[0]}, Title #{row[1]}, Progress #{row[2]}"
+  puts "ID: #{row[0]}, Title #{row[1]}, Progress #{row[2]} \n"
+  #puts row
+
+  result2 = db.execute("SELECT * FROM sub_missions WHERE mission_id = #{row[0]}")
+  result2.each do |rol|
+    #puts result2
+    puts "SubID: #{rol[0]}, refID: #{rol[1]}, content #{rol[2]} \n"
+  end
 end
 
 #json dataで書き出し
@@ -41,28 +48,3 @@ end
 # end
 
 ## json file ..
-
-require 'sqlite3'
-require 'json'
-
-# SQLite3データベースファイルへのパスを指定します。
-db1 = SQLite3::Database.new('path_to_db1.db')
-db2 = SQLite3::Database.new('path_to_db2.db')
-
-# JSONデータを格納するハッシュを初期化します。
-json_data = {}
-
-# DB1から目標情報を取得します。
-db1.execute('SELECT id, title FROM Mission') do |mission_id, title|
-  goal_key = "goal#{mission_id}"
-  json_data[goal_key] = { "title" => title, "Progress" => {} }
-
-  # DB2からサブミッション情報を取得します。
-  db2.execute('SELECT content FROM SubMission WHERE mission = ?', mission_id) do |content|
-    process_key = "Process#{json_data[goal_key]["Progress"].size + 1}"
-    json_data[goal_key]["Progress"][process_key] = content
-  end
-end
-
-# 最終的なJSONデータを表示します。
-puts JSON.pretty_generate(json_data)

@@ -257,3 +257,387 @@ FOREIGN KEY ("mission_id")
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mSubMission Create (7.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 1], ["content", "Sub5"], ["created_at", "2023-08-21 05:51:06.347198"], ["updated_at", "2023-08-21 05:51:06.347198"]]
   [1m[36mTRANSACTION (12.2ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/ask?question=%E3%83%9E%E3%82%B6%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%92%E5%A3%8A%E3%81%97%E3%81%9F%E3%81%84" for 172.28.0.1 at 2023-08-21 06:33:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (cannot load such file -- openai):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started POST "/ask?question=%E3%83%9E%E3%82%B6%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%92%E5%A3%8A%E3%81%97%E3%81%9F%E3%81%84" for 172.28.0.1 at 2023-08-21 06:35:10 +0000
+  
+LoadError (cannot load such file -- openai):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started POST "/ask?question=%E3%83%9E%E3%82%B6%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%92%E5%A3%8A%E3%81%97%E3%81%9F%E3%81%84" for 172.28.0.1 at 2023-08-21 06:36:04 +0000
+  
+LoadError (cannot load such file -- openai):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started POST "/ask?question=%E3%83%9E%E3%82%B6%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%92%E5%A3%8A%E3%81%97%E3%81%9F%E3%81%84" for 172.28.0.1 at 2023-08-21 06:36:16 +0000
+  
+LoadError (cannot load such file -- openai):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started POST "/ask?question=%E3%83%9E%E3%82%B6%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%92%E5%A3%8A%E3%81%97%E3%81%9F%E3%81%84" for 172.28.0.1 at 2023-08-21 06:40:56 +0000
+  
+LoadError (cannot load such file -- openai):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started POST "/ask?question=%E3%83%9E%E3%82%B6%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%92%E5%A3%8A%E3%81%97%E3%81%9F%E3%81%84" for 172.28.0.1 at 2023-08-21 06:43:48 +0000
+  
+LoadError (cannot load such file -- openai):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started POST "/ask?question=%E3%83%9E%E3%82%B6%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%92%E5%A3%8A%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 06:57:24 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"マザークリスタルを壊したい"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:33:in `ask'
+  [1m[36mMission Create (6.0ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "マザークリスタルを壊したい"], ["progress", 1], ["created_at", "2023-08-21 06:57:30.888683"], ["updated_at", "2023-08-21 06:57:30.888683"]]
+  ↳ app/controllers/api_controller.rb:33:in `ask'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:33:in `ask'
+Completed 200 OK in 4627ms (Views: 0.2ms | ActiveRecord: 27.7ms | Allocations: 22213)
+
+
+Started POST "/ask?question=%E3%83%9E%E3%82%B6%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%92%E5%A3%8A%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 06:58:23 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"マザークリスタルを壊したい"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:33:in `ask'
+  [1m[36mMission Create (6.9ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "マザークリスタルを壊したい"], ["progress", 1], ["created_at", "2023-08-21 06:58:28.852304"], ["updated_at", "2023-08-21 06:58:28.852304"]]
+  ↳ app/controllers/api_controller.rb:33:in `ask'
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:33:in `ask'
+Completed 200 OK in 5275ms (Views: 0.2ms | ActiveRecord: 32.0ms | Allocations: 8612)
+
+
+Started POST "/ask?question=%E3%83%9E%E3%82%B6%E3%83%BC%E3%82%AF%E3%83%AA%E3%82%B9%E3%82%BF%E3%83%AB%E3%82%92%E5%A3%8A%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 07:00:30 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"マザークリスタルを壊したい"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:33:in `ask'
+  [1m[36mMission Create (7.5ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "マザークリスタルを壊したい"], ["progress", 1], ["created_at", "2023-08-21 07:00:34.045566"], ["updated_at", "2023-08-21 07:00:34.045566"]]
+  ↳ app/controllers/api_controller.rb:33:in `ask'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:33:in `ask'
+Completed 200 OK in 3660ms (Views: 0.2ms | ActiveRecord: 30.4ms | Allocations: 8930)
+
+
+Started POST "/ask?question=%E3%81%82%E3%81%82%E3%81%82" for 172.30.0.1 at 2023-08-21 07:04:12 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"あああ"}
+Completed 500 Internal Server Error in 3350ms (ActiveRecord: 0.0ms | Allocations: 1581)
+
+
+  
+JSON::ParserError (unexpected token at '{
+  "title": "Goal Achievement Process",
+  "Process":{
+    "Process1" : "Define the goal",
+    "Process2" : "Create a plan",
+    "Process3" : "Take action",
+    "Process4" : "Monitor progress",
+    "Process5" : "Adjust and improve",
+  }
+}'):
+  
+app/controllers/api_controller.rb:64:in `generate_story'
+app/controllers/api_controller.rb:27:in `ask'
+Started POST "/ask?question=%E3%82%AC%E3%82%A4%E3%82%A2%E3%82%BB%E3%82%A4%E3%83%90%E3%83%BC%E7%97%87%E5%80%99%E7%BE%A4%E3%82%92%E6%B2%BB%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 07:07:32 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"ガイアセイバー症候群を治したい"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mMission Create (6.5ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ガイアセイバー症候群を治したい"], ["progress", 1], ["created_at", "2023-08-21 07:07:36.885178"], ["updated_at", "2023-08-21 07:07:36.885178"]]
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+Completed 200 OK in 4144ms (Views: 0.2ms | ActiveRecord: 30.6ms | Allocations: 9499)
+
+
+Started POST "/ask?question=%E3%82%AC%E3%82%A4%E3%82%A2%E3%82%BB%E3%82%A4%E3%83%90%E3%83%BC%E7%97%87%E5%80%99%E7%BE%A4%E3%82%92%E6%B2%BB%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 07:08:00 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"ガイアセイバー症候群を治したい"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mMission Create (5.4ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ガイアセイバー症候群を治したい"], ["progress", 1], ["created_at", "2023-08-21 07:08:05.600625"], ["updated_at", "2023-08-21 07:08:05.600625"]]
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+Completed 200 OK in 4909ms (Views: 0.2ms | ActiveRecord: 29.8ms | Allocations: 8502)
+
+
+Started POST "/ask?question=%E3%82%AC%E3%82%A4%E3%82%A2%E3%82%BB%E3%82%A4%E3%83%90%E3%83%BC%E7%97%87%E5%80%99%E7%BE%A4%E3%82%92%E6%B2%BB%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 07:09:24 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"ガイアセイバー症候群を治したい"}
+Completed 500 Internal Server Error in 3823ms (ActiveRecord: 0.0ms | Allocations: 1586)
+
+
+  
+NameError (uninitialized constant ApiController::Missions):
+  
+app/controllers/api_controller.rb:32:in `ask'
+Started POST "/ask?question=%E3%82%AC%E3%82%A4%E3%82%A2%E3%82%BB%E3%82%A4%E3%83%90%E3%83%BC%E7%97%87%E5%80%99%E7%BE%A4%E3%82%92%E6%B2%BB%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 07:09:50 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"ガイアセイバー症候群を治したい"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mMission Create (6.5ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ガイアセイバー症候群の治療プロセス"], ["progress", 1], ["created_at", "2023-08-21 07:09:54.672487"], ["updated_at", "2023-08-21 07:09:54.672487"]]
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+Completed 200 OK in 4278ms (Views: 0.2ms | ActiveRecord: 34.1ms | Allocations: 8622)
+
+
+Started POST "/ask?question=%E3%82%AC%E3%82%A4%E3%82%A2%E3%82%BB%E3%82%A4%E3%83%90%E3%83%BC%E7%97%87%E5%80%99%E7%BE%A4%E3%82%92%E6%B2%BB%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 07:11:54 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"ガイアセイバー症候群を治したい"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mMission Create (9.2ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ガイアセイバー症候群の治療プロセス"], ["progress", 1], ["created_at", "2023-08-21 07:12:00.344378"], ["updated_at", "2023-08-21 07:12:00.344378"]]
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+Completed 200 OK in 5801ms (Views: 0.2ms | ActiveRecord: 33.5ms | Allocations: 8898)
+
+
+Started POST "/ask?question=%E3%82%AC%E3%82%A4%E3%82%A2%E3%82%BB%E3%82%A4%E3%83%90%E3%83%BC%E7%97%87%E5%80%99%E7%BE%A4%E3%82%92%E6%B2%BB%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 07:35:49 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"ガイアセイバー症候群を治したい"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mMission Create (5.5ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ガイアセイバー症候群の治療のプロセス"], ["progress", 1], ["created_at", "2023-08-21 07:35:54.721811"], ["updated_at", "2023-08-21 07:35:54.721811"]]
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+Completed 200 OK in 4674ms (Views: 0.2ms | ActiveRecord: 14.5ms | Allocations: 8230)
+
+
+Started POST "/ask?question=%E3%82%AC%E3%82%A4%E3%82%A2%E3%82%BB%E3%82%A4%E3%83%90%E3%83%BC%E7%97%87%E5%80%99%E7%BE%A4%E3%82%92%E6%B2%BB%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 07:38:59 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"ガイアセイバー症候群を治したい"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mMission Create (5.8ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ガイアセイバー症候群を治すためのプロセス"], ["progress", 1], ["created_at", "2023-08-21 07:39:03.766314"], ["updated_at", "2023-08-21 07:39:03.766314"]]
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:36:in `ask'
+Completed 200 OK in 3743ms (Views: 0.1ms | ActiveRecord: 13.2ms | Allocations: 3965)
+
+
+Started POST "/ask?question=%E3%82%AC%E3%82%A4%E3%82%A2%E3%82%BB%E3%82%A4%E3%83%90%E3%83%BC%E7%97%87%E5%80%99%E7%BE%A4%E3%82%92%E6%B2%BB%E3%81%97%E3%81%9F%E3%81%84" for 172.30.0.1 at 2023-08-21 07:41:15 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"ガイアセイバー症候群を治したい"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mMission Create (6.4ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ガイアセイバー症候群の治療プロセス"], ["progress", 1], ["created_at", "2023-08-21 07:41:20.592356"], ["updated_at", "2023-08-21 07:41:20.592356"]]
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (8.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 11], ["content", "症状の把握と診断"], ["created_at", "2023-08-21 07:41:20.706345"], ["updated_at", "2023-08-21 07:41:20.706345"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (7.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 11], ["content", "医師との相談・治療方針の決定"], ["created_at", "2023-08-21 07:41:20.726014"], ["updated_at", "2023-08-21 07:41:20.726014"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (6.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 11], ["content", "薬物療法による治療"], ["created_at", "2023-08-21 07:41:20.744130"], ["updated_at", "2023-08-21 07:41:20.744130"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (6.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 11], ["content", "心理的なサポートとカウンセリング"], ["created_at", "2023-08-21 07:41:20.760528"], ["updated_at", "2023-08-21 07:41:20.760528"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (5.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 11], ["content", "生活習慣の改善・適切なリラックス法の学習"], ["created_at", "2023-08-21 07:41:20.777083"], ["updated_at", "2023-08-21 07:41:20.777083"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+Completed 200 OK in 4857ms (Views: 0.2ms | ActiveRecord: 97.7ms | Allocations: 19271)
+
+
+Started POST "/ask?question=TOIC%E6%BA%80%E7%82%B9%E5%8F%96%E3%82%8A%E3%81%9F%E3%81%84" for 172.20.0.1 at 2023-08-22 02:06:12 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#ask as */*
+  Parameters: {"name"=>"クライヴ", "question"=>"TOIC満点取りたい"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mMission Create (15.9ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "達成目標：TOEICの満点を取る"], ["progress", 1], ["created_at", "2023-08-22 02:06:21.690768"], ["updated_at", "2023-08-22 02:06:21.690768"]]
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mTRANSACTION (19.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (18.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 12], ["content", "英単語の復習をする"], ["created_at", "2023-08-22 02:06:22.260096"], ["updated_at", "2023-08-22 02:06:22.260096"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (16.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 12], ["content", "リスニングの練習をする"], ["created_at", "2023-08-22 02:06:22.305870"], ["updated_at", "2023-08-22 02:06:22.305870"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (17.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (15.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 12], ["content", "リーディングの練習をする"], ["created_at", "2023-08-22 02:06:22.350300"], ["updated_at", "2023-08-22 02:06:22.350300"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (19.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (15.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 12], ["content", "文法の勉強をする"], ["created_at", "2023-08-22 02:06:22.393422"], ["updated_at", "2023-08-22 02:06:22.393422"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (17.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (15.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 12], ["content", "模擬試験を受けて実力を確認する"], ["created_at", "2023-08-22 02:06:22.437306"], ["updated_at", "2023-08-22 02:06:22.437306"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+Completed 200 OK in 5522ms (Views: 0.5ms | ActiveRecord: 250.2ms | Allocations: 32512)
+
+
+Started GET "/all" for 172.20.0.1 at 2023-08-22 02:08:19 +0000
+Processing by ApiController#all as */*
+  Parameters: {"name"=>"クライヴ"}
+  [1m[36mMission Load (4.0ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/api_controller.rb:55:in `all'
+  [1m[36mSubMission Load (5.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 1]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (5.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 2]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (4.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 3]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (4.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 4]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (4.5ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 5]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (4.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 6]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (5.1ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 7]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (4.4ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 8]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (4.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 9]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (4.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 10]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (4.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 11]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+  [1m[36mSubMission Load (4.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 12]]
+  ↳ app/controllers/api_controller.rb:61:in `block in all'
+Completed 200 OK in 202ms (Views: 0.3ms | ActiveRecord: 60.1ms | Allocations: 8302)
+
+
+Started POST "/ask" for 172.20.0.1 at 2023-08-22 02:14:29 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"question"=>"世界征服したい"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mMission Create (56.0ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "世界征服プロセス"], ["progress", 1], ["created_at", "2023-08-22 02:14:32.896502"], ["updated_at", "2023-08-22 02:14:32.896502"]]
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mTRANSACTION (19.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (16.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 13], ["content", "目標を明確化する"], ["created_at", "2023-08-22 02:14:32.981568"], ["updated_at", "2023-08-22 02:14:32.981568"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (20.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (17.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 13], ["content", "戦略を練る"], ["created_at", "2023-08-22 02:14:33.027849"], ["updated_at", "2023-08-22 02:14:33.027849"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (16.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (17.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 13], ["content", "リソースを集める"], ["created_at", "2023-08-22 02:14:33.069869"], ["updated_at", "2023-08-22 02:14:33.069869"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (16.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 13], ["content", "同盟を結ぶ"], ["created_at", "2023-08-22 02:14:33.113322"], ["updated_at", "2023-08-22 02:14:33.113322"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (17.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (17.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 13], ["content", "行動を起こす"], ["created_at", "2023-08-22 02:14:33.165109"], ["updated_at", "2023-08-22 02:14:33.165109"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (16.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+Completed 200 OK in 3354ms (Views: 0.6ms | ActiveRecord: 253.8ms | Allocations: 12004)
+
+
+Started POST "/ask" for 172.21.0.1 at 2023-08-22 02:36:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#ask as */*
+  Parameters: {"question"=>"世界征服したい"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mMission Create (59.7ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "世界征服のためのプロセス"], ["progress", 1], ["created_at", "2023-08-22 02:36:23.366431"], ["updated_at", "2023-08-22 02:36:23.366431"]]
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mTRANSACTION (17.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:35:in `ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (15.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 14], ["content", "目標を明確化する"], ["created_at", "2023-08-22 02:36:23.638239"], ["updated_at", "2023-08-22 02:36:23.638239"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (17.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 14], ["content", "戦略を立てる"], ["created_at", "2023-08-22 02:36:23.679655"], ["updated_at", "2023-08-22 02:36:23.679655"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (20.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (16.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 14], ["content", "リソースを獲得する"], ["created_at", "2023-08-22 02:36:23.725894"], ["updated_at", "2023-08-22 02:36:23.725894"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (18.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (14.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 14], ["content", "勢力を拡大する"], ["created_at", "2023-08-22 02:36:23.770295"], ["updated_at", "2023-08-22 02:36:23.770295"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (17.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mSubMission Create (17.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 14], ["content", "統治体制を確立する"], ["created_at", "2023-08-22 02:36:23.810570"], ["updated_at", "2023-08-22 02:36:23.810570"]]
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+  [1m[36mTRANSACTION (20.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:41:in `block in ask'
+Completed 200 OK in 4003ms (Views: 0.5ms | ActiveRecord: 292.8ms | Allocations: 26731)
+
+

@@ -26,16 +26,51 @@ class ApiController < ApplicationController
 
     response = generate_story(config, question)
 
+    process = response["Process"]
+    array = [process["Process1"], process["Process2"], process["Process3"], process["Process4"], process["Process5"]]
+
+    mission = Mission.new
+    mission.title = response["title"]
+    mission.progress = 1
+    mission.save
+
+    array.each do |res|
+      sub = SubMission.new
+      sub.mission = mission
+      sub.content = res
+      sub.save
+    end
+
     render :json => {
-      "question": question,
-      "config": config,
-      "response": response
+      "title": response["title"],
+      "response": array,
     }
+  end
+
+  def all
+    mission = Mission.all
+    json_data = {}
+
+    # DB1から目標情報を取得します。
+    mission.each do |miso|
+      goal_key = "goal#{miso.id}"
+      json_data[goal_key] = { "title" => miso.title, "Progress" => {} }
+
+      # DB2からサブミッション情報を取得します。
+      sub = SubMission.where(mission_id: miso.id)
+      sub.each do |submi|
+        process_key = "Process#{json_data[goal_key]["Progress"].size + 1}"
+        json_data[goal_key]["Progress"][process_key] = submi.content
+      end
+    end
+
+    # 最終的なJSONデータを表示します。
+    render :json => JSON.pretty_generate(json_data)
   end
 
   def generate_story(config, question)
 
-    client = OpenAI::Client.new(access_token: "API_KEY")
+    client = OpenAI::Client.new(access_token: "")
 
     response = client.chat(
       parameters:{
@@ -46,6 +81,7 @@ class ApiController < ApplicationController
         ],
       }
     )
-    return JSON.parse(response.dig('choices', 0, 'message', 'content'))
+    json = JSON.parse(response.dig('choices', 0, 'message', 'content'))
+    return json
   end
 end
