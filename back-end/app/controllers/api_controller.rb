@@ -1,4 +1,7 @@
 class ApiController < ApplicationController
+#======================================================================================
+# 質問
+#======================================================================================
   def ask
 
     config = <<~CONFIG
@@ -71,6 +74,9 @@ class ApiController < ApplicationController
     }
   end
 
+#==========================================================================
+# 全取得
+#==========================================================================
   def all
     mission = Mission.all
     json_data = {}
@@ -97,9 +103,124 @@ class ApiController < ApplicationController
     render :json => JSON.pretty_generate(json_data)
   end
 
+#======================================================================================
+# 全取得ダミー
+#======================================================================================
+  def dumy
+    json_data = <<~data
+    {
+      "goal1": {
+        "title": "目標達成のプロセス",
+        "Process":{
+          "Process1" : "計画の立案",
+          "Process2" : "リソースの確保",
+          "Process3" : "タスクの分担",
+          "Process4" : "実行とモニタリング",
+          "Process5" : "評価と改善",
+          "Process1-1" : "目標の具体化",
+          "Process1-2" : "期限の設定",
+          "Process1-3" : "アクションプランの作成",
+          "Process1-4" : "必要なステップの洗い出し",
+          "Process1-5" : "リスクの予測",
+          "Process2-1" : "予算の確保",
+          "Process2-2" : "人材の手配",
+          "Process2-3" : "必要なツールや技術の選定",
+          "Process2-4" : "物資の手配",
+          "Process2-5" : "サポート体制の構築",
+          "Process3-1" : "各メンバーの役割分担",
+          "Process3-2" : "タスクの優先度付け",
+          "Process3-3" : "コミュニケーションプランの策定",
+          "Process3-4" : "進捗共有の仕組み構築",
+          "Process3-5" : "チーム間の連携強化",
+          "Process4-1" : "タスクの着手",
+          "Process4-2" : "進捗のモニタリング",
+          "Process4-3" : "問題の早期発見と対処",
+          "Process4-4" : "変更への柔軟な対応",
+          "Process4-5" : "成果物の確認と評価",
+          "Process5-1" : "目標達成の評価",
+          "Process5-2" : "計画通りかの確認",
+          "Process5-3" : "達成度の分析",
+          "Process5-4" : "フィードバックの収集",
+          "Process5-5" : "改善策の策定"
+        }
+      },
+      "goal2": {
+        "title": "目標達成のプロセス",
+        "Process":{
+          "Process1" : "計画の立案",
+          "Process2" : "リソースの確保",
+          "Process3" : "タスクの分担",
+          "Process4" : "実行とモニタリング",
+          "Process5" : "評価と改善",
+          "Process1-1" : "目標の具体化",
+          "Process1-2" : "期限の設定",
+          "Process1-3" : "アクションプランの作成",
+          "Process1-4" : "必要なステップの洗い出し",
+          "Process1-5" : "リスクの予測",
+          "Process2-1" : "予算の確保",
+          "Process2-2" : "人材の手配",
+          "Process2-3" : "必要なツールや技術の選定",
+          "Process2-4" : "物資の手配",
+          "Process2-5" : "サポート体制の構築",
+          "Process3-1" : "各メンバーの役割分担",
+          "Process3-2" : "タスクの優先度付け",
+          "Process3-3" : "コミュニケーションプランの策定",
+          "Process3-4" : "進捗共有の仕組み構築",
+          "Process3-5" : "チーム間の連携強化",
+          "Process4-1" : "タスクの着手",
+          "Process4-2" : "進捗のモニタリング",
+          "Process4-3" : "問題の早期発見と対処",
+          "Process4-4" : "変更への柔軟な対応",
+          "Process4-5" : "成果物の確認と評価",
+          "Process5-1" : "目標達成の評価",
+          "Process5-2" : "計画通りかの確認",
+          "Process5-3" : "達成度の分析",
+          "Process5-4" : "フィードバックの収集",
+          "Process5-5" : "改善策の策定"
+        }
+      },
+      "goal3": {
+        "title": "目標達成のプロセス",
+        "Process":{
+          "Process1" : "計画の立案",
+          "Process2" : "リソースの確保",
+          "Process3" : "タスクの分担",
+          "Process4" : "実行とモニタリング",
+          "Process5" : "評価と改善",
+          "Process1-1" : "目標の具体化",
+          "Process1-2" : "期限の設定",
+          "Process1-3" : "アクションプランの作成",
+          "Process1-4" : "必要なステップの洗い出し",
+          "Process1-5" : "リスクの予測",
+          "Process2-1" : "予算の確保",
+          "Process2-2" : "人材の手配",
+          "Process2-3" : "必要なツールや技術の選定",
+          "Process2-4" : "物資の手配",
+          "Process2-5" : "サポート体制の構築",
+          "Process3-1" : "各メンバーの役割分担",
+          "Process3-2" : "タスクの優先度付け",
+          "Process3-3" : "コミュニケーションプランの策定",
+          "Process3-4" : "進捗共有の仕組み構築",
+          "Process3-5" : "チーム間の連携強化",
+          "Process4-1" : "タスクの着手",
+          "Process4-2" : "進捗のモニタリング",
+          "Process4-3" : "問題の早期発見と対処",
+          "Process4-4" : "変更への柔軟な対応",
+          "Process4-5" : "成果物の確認と評価",
+          "Process5-1" : "目標達成の評価",
+          "Process5-2" : "計画通りかの確認",
+          "Process5-3" : "達成度の分析",
+          "Process5-4" : "フィードバックの収集",
+          "Process5-5" : "改善策の策定"
+        }
+      }
+    }
+    data
+    render :json => JSON.parse(json_data)
+  end
   def generate_story(config, question)
 
-    client = OpenAI::Client.new(access_token: "")
+    client = OpenAI::Client.new(access_token: "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")
 
     response = client.chat(
       parameters:{
