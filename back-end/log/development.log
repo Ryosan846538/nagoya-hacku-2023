@@ -641,3 +641,1083 @@ Processing by ApiController#ask as */*
 Completed 200 OK in 4003ms (Views: 0.5ms | ActiveRecord: 292.8ms | Allocations: 26731)
 
 
+Started POST "/ask?question=%E7%A5%9E%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9F%E3%81%84" for 172.22.0.1 at 2023-08-22 06:35:17 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#ask as */*
+  Parameters: {"question"=>"神になりたい"}
+Completed 500 Internal Server Error in 404ms (ActiveRecord: 0.0ms | Allocations: 4699)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/api_controller.rb:84:in `generate_story'
+app/controllers/api_controller.rb:27:in `ask'
+Started POST "/ask" for 172.22.0.1 at 2023-08-22 06:46:54 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"question"=>"世界征服したい"}
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 0.0ms | Allocations: 1186)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/api_controller.rb:84:in `generate_story'
+app/controllers/api_controller.rb:27:in `ask'
+Started POST "/ask" for 172.18.0.1 at 2023-08-22 16:08:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (8.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/myapp/app/controllers/api_controller.rb:91: syntax error, unexpected string literal, expecting '}'
+      "Process":{
+      ^
+):
+  
+app/controllers/api_controller.rb:91: syntax error, unexpected string literal, expecting '}'
+app/controllers/api_controller.rb:91: syntax error, unexpected string literal, expecting '}'
+Started POST "/ask" for 172.18.0.1 at 2023-08-22 16:17:34 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"question"=>"魔王を殺したい"}
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.0ms | Allocations: 2764)
+
+
+  
+JSON::ParserError (unexpected token at '{
+      "title": "aaa"
+      "Process":{
+        "Process1" : " ",
+        "Process2" : " ",
+        "Process3" : " ",
+        "Process4" : " ",
+        "Process5" : " ",
+        "Process1-1" : " ",
+        "Process1-2" : " ",
+        "Process1-3" : " ",
+        "Process1-4" : " ",
+        "Process1-5" : " ",
+        "Process2-1" : " ",
+        "Process2-2" : " ",
+        "Process2-3" : " ",
+        "Process2-4" : " ",
+        "Process2-5" : " ",
+        "Process3-1" : " ",
+        "Process3-2" : " ",
+        "Process3-3" : " ",
+        "Process3-4" : " ",
+        "Process3-5" : " ",
+        "Process4-1" : " ",
+        "Process4-2" : " ",
+        "Process4-3" : " ",
+        "Process4-4" : " ",
+        "Process4-5" : " ",
+        "Process5-1" : " ",
+        "Process5-2" : " ",
+        "Process5-3" : " ",
+        "Process5-4" : " ",
+        "Process5-5" : " "
+      }
+    }'):
+  
+app/controllers/api_controller.rb:124:in `generate_story'
+app/controllers/api_controller.rb:27:in `ask'
+Started POST "/ask" for 172.18.0.1 at 2023-08-22 16:27:39 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"question"=>"魔王を殺したい"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:34:in `ask'
+  [1m[36mMission Create (30.2ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaa"], ["progress", 1], ["created_at", "2023-08-22 16:27:41.326558"], ["updated_at", "2023-08-22 16:27:41.326558"]]
+  ↳ app/controllers/api_controller.rb:34:in `ask'
+  [1m[36mTRANSACTION (34.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:34:in `ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.018308"], ["updated_at", "2023-08-22 16:27:42.018308"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (36.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.104589"], ["updated_at", "2023-08-22 16:27:42.104589"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.187401"], ["updated_at", "2023-08-22 16:27:42.187401"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (33.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.262985"], ["updated_at", "2023-08-22 16:27:42.262985"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (30.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.334297"], ["updated_at", "2023-08-22 16:27:42.334297"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (32.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.411173"], ["updated_at", "2023-08-22 16:27:42.411173"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.489569"], ["updated_at", "2023-08-22 16:27:42.489569"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.562073"], ["updated_at", "2023-08-22 16:27:42.562073"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (38.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.650090"], ["updated_at", "2023-08-22 16:27:42.650090"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.726758"], ["updated_at", "2023-08-22 16:27:42.726758"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.797021"], ["updated_at", "2023-08-22 16:27:42.797021"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (26.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.862833"], ["updated_at", "2023-08-22 16:27:42.862833"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:42.945831"], ["updated_at", "2023-08-22 16:27:42.945831"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.019934"], ["updated_at", "2023-08-22 16:27:43.019934"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.089895"], ["updated_at", "2023-08-22 16:27:43.089895"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.156802"], ["updated_at", "2023-08-22 16:27:43.156802"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.227910"], ["updated_at", "2023-08-22 16:27:43.227910"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.295438"], ["updated_at", "2023-08-22 16:27:43.295438"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.367514"], ["updated_at", "2023-08-22 16:27:43.367514"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (32.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (30.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.442394"], ["updated_at", "2023-08-22 16:27:43.442394"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.514711"], ["updated_at", "2023-08-22 16:27:43.514711"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (34.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (30.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.588499"], ["updated_at", "2023-08-22 16:27:43.588499"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (31.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.667722"], ["updated_at", "2023-08-22 16:27:43.667722"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (32.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (32.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.746435"], ["updated_at", "2023-08-22 16:27:43.746435"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (32.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.828201"], ["updated_at", "2023-08-22 16:27:43.828201"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.904772"], ["updated_at", "2023-08-22 16:27:43.904772"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (32.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:43.982785"], ["updated_at", "2023-08-22 16:27:43.982785"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:44.052868"], ["updated_at", "2023-08-22 16:27:44.052868"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:44.129994"], ["updated_at", "2023-08-22 16:27:44.129994"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 15], ["content", " "], ["created_at", "2023-08-22 16:27:44.211841"], ["updated_at", "2023-08-22 16:27:44.211841"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+Completed 200 OK in 3528ms (Views: 0.9ms | ActiveRecord: 1996.4ms | Allocations: 64991)
+
+
+Started POST "/ask" for 172.18.0.1 at 2023-08-22 16:31:14 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"question"=>"魔王を殺したい"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:34:in `ask'
+  [1m[36mMission Create (68.0ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaa"], ["progress", 1], ["created_at", "2023-08-22 16:31:16.078474"], ["updated_at", "2023-08-22 16:31:16.078474"]]
+  ↳ app/controllers/api_controller.rb:34:in `ask'
+  [1m[36mTRANSACTION (31.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:34:in `ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (74.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "1"], ["created_at", "2023-08-22 16:31:16.327593"], ["updated_at", "2023-08-22 16:31:16.327593"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (34.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "2"], ["created_at", "2023-08-22 16:31:16.456632"], ["updated_at", "2023-08-22 16:31:16.456632"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (25.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "3"], ["created_at", "2023-08-22 16:31:16.529707"], ["updated_at", "2023-08-22 16:31:16.529707"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (26.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (25.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "4"], ["created_at", "2023-08-22 16:31:16.602425"], ["updated_at", "2023-08-22 16:31:16.602425"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (25.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "5"], ["created_at", "2023-08-22 16:31:16.670608"], ["updated_at", "2023-08-22 16:31:16.670608"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (27.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (25.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "1-1"], ["created_at", "2023-08-22 16:31:16.739058"], ["updated_at", "2023-08-22 16:31:16.739058"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "1-2"], ["created_at", "2023-08-22 16:31:16.808433"], ["updated_at", "2023-08-22 16:31:16.808433"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (32.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "1-3"], ["created_at", "2023-08-22 16:31:16.885338"], ["updated_at", "2023-08-22 16:31:16.885338"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "1-4"], ["created_at", "2023-08-22 16:31:16.961476"], ["updated_at", "2023-08-22 16:31:16.961476"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "1-5"], ["created_at", "2023-08-22 16:31:17.040344"], ["updated_at", "2023-08-22 16:31:17.040344"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "2-1"], ["created_at", "2023-08-22 16:31:17.134813"], ["updated_at", "2023-08-22 16:31:17.134813"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "2-2"], ["created_at", "2023-08-22 16:31:17.209008"], ["updated_at", "2023-08-22 16:31:17.209008"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (27.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (20.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "2-3"], ["created_at", "2023-08-22 16:31:17.284412"], ["updated_at", "2023-08-22 16:31:17.284412"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (24.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (22.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "2-4"], ["created_at", "2023-08-22 16:31:17.340274"], ["updated_at", "2023-08-22 16:31:17.340274"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (25.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "2-5"], ["created_at", "2023-08-22 16:31:17.402347"], ["updated_at", "2023-08-22 16:31:17.402347"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "3-1"], ["created_at", "2023-08-22 16:31:17.473230"], ["updated_at", "2023-08-22 16:31:17.473230"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "3-2"], ["created_at", "2023-08-22 16:31:17.546933"], ["updated_at", "2023-08-22 16:31:17.546933"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (27.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "3-3"], ["created_at", "2023-08-22 16:31:17.621025"], ["updated_at", "2023-08-22 16:31:17.621025"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "3-4"], ["created_at", "2023-08-22 16:31:17.693519"], ["updated_at", "2023-08-22 16:31:17.693519"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (27.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "3-5"], ["created_at", "2023-08-22 16:31:17.766878"], ["updated_at", "2023-08-22 16:31:17.766878"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (33.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "4-1"], ["created_at", "2023-08-22 16:31:17.847425"], ["updated_at", "2023-08-22 16:31:17.847425"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "4-2"], ["created_at", "2023-08-22 16:31:17.924271"], ["updated_at", "2023-08-22 16:31:17.924271"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "4-3"], ["created_at", "2023-08-22 16:31:17.996267"], ["updated_at", "2023-08-22 16:31:17.996267"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "4-4"], ["created_at", "2023-08-22 16:31:18.071562"], ["updated_at", "2023-08-22 16:31:18.071562"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "4-5"], ["created_at", "2023-08-22 16:31:18.144481"], ["updated_at", "2023-08-22 16:31:18.144481"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (27.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (25.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "5-1"], ["created_at", "2023-08-22 16:31:18.216992"], ["updated_at", "2023-08-22 16:31:18.216992"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (27.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (25.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "5-2"], ["created_at", "2023-08-22 16:31:18.288361"], ["updated_at", "2023-08-22 16:31:18.288361"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (27.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "5-3"], ["created_at", "2023-08-22 16:31:18.355511"], ["updated_at", "2023-08-22 16:31:18.355511"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (26.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "5-4"], ["created_at", "2023-08-22 16:31:18.424025"], ["updated_at", "2023-08-22 16:31:18.424025"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 16], ["content", "5-5"], ["created_at", "2023-08-22 16:31:18.495853"], ["updated_at", "2023-08-22 16:31:18.495853"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+Completed 200 OK in 2706ms (Views: 1.1ms | ActiveRecord: 1906.7ms | Allocations: 58641)
+
+
+Started GET "/all" for 172.18.0.1 at 2023-08-22 16:32:05 +0000
+Processing by ApiController#all as */*
+  [1m[36mMission Load (7.8ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/api_controller.rb:54:in `all'
+  [1m[36mSubMission Load (9.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 1]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (8.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 2]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (10.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 3]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (10.5ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 4]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (9.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 5]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (8.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 6]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (13.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 7]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (8.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 8]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (8.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 9]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (8.4ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 10]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (8.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 11]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (9.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 12]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (8.4ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 13]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (10.1ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 14]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (9.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 15]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+  [1m[36mSubMission Load (9.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 16]]
+  ↳ app/controllers/api_controller.rb:60:in `block in all'
+Completed 200 OK in 333ms (Views: 0.3ms | ActiveRecord: 159.8ms | Allocations: 10903)
+
+
+Started GET "/all" for 172.18.0.1 at 2023-08-22 17:52:26 +0000
+Processing by ApiController#all as */*
+  [1m[36mMission Load (6.9ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/api_controller.rb:54:in `all'
+  [1m[36mSubMission Load (10.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 1]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (7.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 2]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (7.2ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 3]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (6.4ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 4]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (7.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 5]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (7.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 6]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (5.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 7]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 8]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (7.2ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 9]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 10]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 11]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.1ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 12]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 13]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.5ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 14]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (10.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 15]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.4ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 16]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+Completed 200 OK in 509ms (Views: 0.5ms | ActiveRecord: 146.2ms | Allocations: 14484)
+
+
+Started GET "/all" for 172.18.0.1 at 2023-08-22 17:53:01 +0000
+Processing by ApiController#all as */*
+  [1m[36mMission Load (8.4ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/api_controller.rb:54:in `all'
+  [1m[36mSubMission Load (12.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 1]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 2]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 3]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.1ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 4]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 5]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.4ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 6]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 7]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 8]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.2ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 9]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 10]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.5ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 11]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 12]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.2ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 13]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 14]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 15]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 16]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+Completed 200 OK in 609ms (Views: 0.3ms | ActiveRecord: 235.1ms | Allocations: 15121)
+
+
+Started GET "/all" for 172.18.0.1 at 2023-08-22 17:53:30 +0000
+Processing by ApiController#all as */*
+  [1m[36mMission Load (8.2ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/api_controller.rb:54:in `all'
+  [1m[36mSubMission Load (9.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 1]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 2]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (7.5ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 3]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (7.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 4]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 5]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 6]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (7.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 7]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 8]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 9]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 10]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (10.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 11]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.5ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 12]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 13]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.1ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 14]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (10.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 15]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.1ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 16]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+Completed 200 OK in 599ms (Views: 0.4ms | ActiveRecord: 227.1ms | Allocations: 15118)
+
+
+Started GET "/all" for 172.18.0.1 at 2023-08-22 17:54:30 +0000
+Processing by ApiController#all as */*
+  [1m[36mMission Load (9.1ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/api_controller.rb:54:in `all'
+  [1m[36mSubMission Load (9.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 1]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 2]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (6.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 3]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (7.1ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 4]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (6.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 5]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (6.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 6]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (6.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 7]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.4ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 8]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.2ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 9]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 10]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (10.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 11]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 12]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 13]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 14]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 15]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.4ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 16]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+Completed 200 OK in 722ms (Views: 0.3ms | ActiveRecord: 227.4ms | Allocations: 15113)
+
+
+Started GET "/all" for 172.18.0.1 at 2023-08-22 17:55:14 +0000
+Processing by ApiController#all as */*
+  [1m[36mMission Load (8.6ms)[0m  [1m[34mSELECT "missions".* FROM "missions"[0m
+  ↳ app/controllers/api_controller.rb:54:in `all'
+  [1m[36mSubMission Load (10.2ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 1]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.1ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 2]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 3]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 4]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.2ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 5]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 6]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 7]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (10.5ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 8]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 9]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.6ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 10]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (10.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 11]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.3ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 12]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.8ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 13]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (8.9ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 14]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.7ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 15]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+  [1m[36mSubMission Load (9.0ms)[0m  [1m[34mSELECT "sub_missions".* FROM "sub_missions" WHERE "sub_missions"."mission_id" = ?[0m  [["mission_id", 16]]
+  ↳ app/controllers/api_controller.rb:60:in `each_with_index'
+Completed 200 OK in 689ms (Views: 0.9ms | ActiveRecord: 246.6ms | Allocations: 15193)
+
+
+Started POST "/ask" for 172.18.0.1 at 2023-08-22 17:55:48 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"question"=>"魔王を殺したい"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:34:in `ask'
+  [1m[36mMission Create (69.7ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaa"], ["progress", 1], ["created_at", "2023-08-22 17:55:48.624353"], ["updated_at", "2023-08-22 17:55:48.624353"]]
+  ↳ app/controllers/api_controller.rb:34:in `ask'
+  [1m[36mTRANSACTION (34.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:34:in `ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (31.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "1"], ["created_at", "2023-08-22 17:55:48.744545"], ["updated_at", "2023-08-22 17:55:48.744545"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (32.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (34.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "2"], ["created_at", "2023-08-22 17:55:48.823669"], ["updated_at", "2023-08-22 17:55:48.823669"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (38.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "3"], ["created_at", "2023-08-22 17:55:48.912887"], ["updated_at", "2023-08-22 17:55:48.912887"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (32.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "4"], ["created_at", "2023-08-22 17:55:48.991756"], ["updated_at", "2023-08-22 17:55:48.991756"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (31.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "5"], ["created_at", "2023-08-22 17:55:49.070442"], ["updated_at", "2023-08-22 17:55:49.070442"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "1-1"], ["created_at", "2023-08-22 17:55:49.159607"], ["updated_at", "2023-08-22 17:55:49.159607"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "1-2"], ["created_at", "2023-08-22 17:55:49.244523"], ["updated_at", "2023-08-22 17:55:49.244523"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (31.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "1-3"], ["created_at", "2023-08-22 17:55:49.320671"], ["updated_at", "2023-08-22 17:55:49.320671"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (25.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "1-4"], ["created_at", "2023-08-22 17:55:49.397597"], ["updated_at", "2023-08-22 17:55:49.397597"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "1-5"], ["created_at", "2023-08-22 17:55:49.466300"], ["updated_at", "2023-08-22 17:55:49.466300"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "2-1"], ["created_at", "2023-08-22 17:55:49.539528"], ["updated_at", "2023-08-22 17:55:49.539528"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "2-2"], ["created_at", "2023-08-22 17:55:49.609617"], ["updated_at", "2023-08-22 17:55:49.609617"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "2-3"], ["created_at", "2023-08-22 17:55:49.682195"], ["updated_at", "2023-08-22 17:55:49.682195"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "2-4"], ["created_at", "2023-08-22 17:55:49.758223"], ["updated_at", "2023-08-22 17:55:49.758223"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (30.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (30.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "2-5"], ["created_at", "2023-08-22 17:55:49.832734"], ["updated_at", "2023-08-22 17:55:49.832734"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (29.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (29.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "3-1"], ["created_at", "2023-08-22 17:55:49.907666"], ["updated_at", "2023-08-22 17:55:49.907666"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (32.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (30.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "3-2"], ["created_at", "2023-08-22 17:55:49.984142"], ["updated_at", "2023-08-22 17:55:49.984142"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (32.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "3-3"], ["created_at", "2023-08-22 17:55:50.061266"], ["updated_at", "2023-08-22 17:55:50.061266"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (33.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "3-4"], ["created_at", "2023-08-22 17:55:50.142374"], ["updated_at", "2023-08-22 17:55:50.142374"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (33.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "3-5"], ["created_at", "2023-08-22 17:55:50.227436"], ["updated_at", "2023-08-22 17:55:50.227436"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (35.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "4-1"], ["created_at", "2023-08-22 17:55:50.310462"], ["updated_at", "2023-08-22 17:55:50.310462"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (31.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "4-2"], ["created_at", "2023-08-22 17:55:50.398422"], ["updated_at", "2023-08-22 17:55:50.398422"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (31.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (30.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "4-3"], ["created_at", "2023-08-22 17:55:50.476538"], ["updated_at", "2023-08-22 17:55:50.476538"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (32.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (32.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "4-4"], ["created_at", "2023-08-22 17:55:50.558035"], ["updated_at", "2023-08-22 17:55:50.558035"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (34.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (30.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "4-5"], ["created_at", "2023-08-22 17:55:50.640993"], ["updated_at", "2023-08-22 17:55:50.640993"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (34.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (32.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "5-1"], ["created_at", "2023-08-22 17:55:50.722667"], ["updated_at", "2023-08-22 17:55:50.722667"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (35.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (28.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "5-2"], ["created_at", "2023-08-22 17:55:50.805242"], ["updated_at", "2023-08-22 17:55:50.805242"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (26.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (23.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "5-3"], ["created_at", "2023-08-22 17:55:50.875766"], ["updated_at", "2023-08-22 17:55:50.875766"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (27.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (26.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "5-4"], ["created_at", "2023-08-22 17:55:50.940217"], ["updated_at", "2023-08-22 17:55:50.940217"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (27.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mSubMission Create (27.5ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 17], ["content", "5-5"], ["created_at", "2023-08-22 17:55:51.010388"], ["updated_at", "2023-08-22 17:55:51.010388"]]
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+  [1m[36mTRANSACTION (28.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:40:in `block in ask'
+Completed 200 OK in 2457ms (Views: 0.9ms | ActiveRecord: 1970.3ms | Allocations: 53980)
+
+
+Started POST "/ask" for 172.18.0.1 at 2023-08-22 18:02:08 +0000
+Processing by ApiController#ask as */*
+  Parameters: {"question"=>"魔王を殺したい"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:59:in `ask'
+  [1m[36mMission Create (26.7ms)[0m  [1m[32mINSERT INTO "missions" ("title", "progress", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "魔王を殺すプロセス"], ["progress", 1], ["created_at", "2023-08-22 18:02:35.948325"], ["updated_at", "2023-08-22 18:02:35.948325"]]
+  ↳ app/controllers/api_controller.rb:59:in `ask'
+  [1m[36mTRANSACTION (32.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:59:in `ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (71.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "情報収集"], ["created_at", "2023-08-22 18:02:36.112903"], ["updated_at", "2023-08-22 18:02:36.112903"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (38.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (39.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "仲間を集める"], ["created_at", "2023-08-22 18:02:36.236958"], ["updated_at", "2023-08-22 18:02:36.236958"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (34.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (30.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "装備を整える"], ["created_at", "2023-08-22 18:02:36.325926"], ["updated_at", "2023-08-22 18:02:36.325926"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (35.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (28.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王の弱点を突く"], ["created_at", "2023-08-22 18:02:36.408736"], ["updated_at", "2023-08-22 18:02:36.408736"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (31.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (29.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "最終決戦"], ["created_at", "2023-08-22 18:02:36.483569"], ["updated_at", "2023-08-22 18:02:36.483569"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (30.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (32.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王の居城の位置を特定"], ["created_at", "2023-08-22 18:02:36.557242"], ["updated_at", "2023-08-22 18:02:36.557242"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (31.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (30.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王の力や戦略を調査"], ["created_at", "2023-08-22 18:02:36.650466"], ["updated_at", "2023-08-22 18:02:36.650466"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (31.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (28.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王の配下や罠について調べる"], ["created_at", "2023-08-22 18:02:36.729741"], ["updated_at", "2023-08-22 18:02:36.729741"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (29.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (28.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王との対話を試みる"], ["created_at", "2023-08-22 18:02:36.807052"], ["updated_at", "2023-08-22 18:02:36.807052"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (27.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (24.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "他の冒険者や賢者から情報を集める"], ["created_at", "2023-08-22 18:02:36.881304"], ["updated_at", "2023-08-22 18:02:36.881304"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (26.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (27.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "冒険者ギルドや魔法学校で仲間を募集"], ["created_at", "2023-08-22 18:02:36.949559"], ["updated_at", "2023-08-22 18:02:36.949559"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (29.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (26.7ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "仲間募集の掲示を出す"], ["created_at", "2023-08-22 18:02:37.020742"], ["updated_at", "2023-08-22 18:02:37.020742"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (27.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (27.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "他の冒険者と情報共有を行う"], ["created_at", "2023-08-22 18:02:37.089604"], ["updated_at", "2023-08-22 18:02:37.089604"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (31.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (28.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "仲間の能力や信頼性を確認"], ["created_at", "2023-08-22 18:02:37.166033"], ["updated_at", "2023-08-22 18:02:37.166033"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (31.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (28.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "信頼できる指導者を見つける"], ["created_at", "2023-08-22 18:02:37.240974"], ["updated_at", "2023-08-22 18:02:37.240974"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (32.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (30.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "武器や防具を購入または修理"], ["created_at", "2023-08-22 18:02:37.320025"], ["updated_at", "2023-08-22 18:02:37.320025"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (29.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (27.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "アイテム屋で回復薬や特殊アイテムを調達"], ["created_at", "2023-08-22 18:02:37.396044"], ["updated_at", "2023-08-22 18:02:37.396044"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (28.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (26.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔法学校で新しいスキルを習得"], ["created_at", "2023-08-22 18:02:37.467904"], ["updated_at", "2023-08-22 18:02:37.467904"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (26.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (28.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "冒険者ギルドでサポートを頼む"], ["created_at", "2023-08-22 18:02:37.534335"], ["updated_at", "2023-08-22 18:02:37.534335"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (28.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (28.0ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "特殊な装備やアイテムを探し出す"], ["created_at", "2023-08-22 18:02:37.604146"], ["updated_at", "2023-08-22 18:02:37.604146"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (30.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (27.8ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王の弱点を異世界の文献で調査"], ["created_at", "2023-08-22 18:02:37.682789"], ["updated_at", "2023-08-22 18:02:37.682789"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (29.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (27.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔法学校の教えを頼りに戦略を練る"], ["created_at", "2023-08-22 18:02:37.754013"], ["updated_at", "2023-08-22 18:02:37.754013"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (30.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (27.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王の過去の戦闘記録を分析"], ["created_at", "2023-08-22 18:02:37.825723"], ["updated_at", "2023-08-22 18:02:37.825723"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (28.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (28.1ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王の配下や呪いを断ち切る方法を探る"], ["created_at", "2023-08-22 18:02:37.901797"], ["updated_at", "2023-08-22 18:02:37.901797"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (23.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (24.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔法学校で魔法を強化する"], ["created_at", "2023-08-22 18:02:37.965791"], ["updated_at", "2023-08-22 18:02:37.965791"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (30.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (28.3ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王の居城に突入する"], ["created_at", "2023-08-22 18:02:38.036075"], ["updated_at", "2023-08-22 18:02:38.036075"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (29.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (25.2ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "仲間同士で連携を取りながら戦闘"], ["created_at", "2023-08-22 18:02:38.108926"], ["updated_at", "2023-08-22 18:02:38.108926"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (29.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (26.9ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "魔王の弱点を利用した攻撃を仕掛ける"], ["created_at", "2023-08-22 18:02:38.182627"], ["updated_at", "2023-08-22 18:02:38.182627"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (27.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (27.6ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "仲間を守りつつ魔王にダメージを与える"], ["created_at", "2023-08-22 18:02:38.251944"], ["updated_at", "2023-08-22 18:02:38.251944"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (28.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mSubMission Create (29.4ms)[0m  [1m[32mINSERT INTO "sub_missions" ("mission_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["mission_id", 18], ["content", "最後の一撃を魔王に浴びせる"], ["created_at", "2023-08-22 18:02:38.324789"], ["updated_at", "2023-08-22 18:02:38.324789"]]
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+  [1m[36mTRANSACTION (30.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api_controller.rb:65:in `block in ask'
+Completed 200 OK in 28381ms (Views: 1.4ms | ActiveRecord: 1867.5ms | Allocations: 60367)
+
+

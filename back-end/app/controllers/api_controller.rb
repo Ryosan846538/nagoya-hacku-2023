@@ -12,13 +12,38 @@ class ApiController < ApplicationController
     ChatGPTあなたの返信は以下のJSON形式のみとします。必ず守るようにしてください。
 
     {
-      "title": " ",
+      "title": "",
       "Process":{
-        "Process1" : " ",
-        "Process2" : " ",
-        "Process3" : " ",
-        "Process4" : " ",
-        "Process5" : " ",
+        "Process1" : "",
+        "Process2" : "",
+        "Process3" : "",
+        "Process4" : "",
+        "Process5" : "",
+        "Process1-1" : "",
+        "Process1-2" : "",
+        "Process1-3" : "",
+        "Process1-4" : "",
+        "Process1-5" : "",
+        "Process2-1" : "",
+        "Process2-2" : "",
+        "Process2-3" : "",
+        "Process2-4" : "",
+        "Process2-5" : "",
+        "Process3-1" : "",
+        "Process3-2" : "",
+        "Process3-3" : "",
+        "Process3-4" : "",
+        "Process3-5" : "",
+        "Process4-1" : "",
+        "Process4-2" : "",
+        "Process4-3" : "",
+        "Process4-4" : "",
+        "Process4-5" : "",
+        "Process5-1" : "",
+        "Process5-2" : "",
+        "Process5-3" : "",
+        "Process5-4" : "",
+        "Process5-5" : ""
       }
     }
     CONFIG
@@ -27,23 +52,22 @@ class ApiController < ApplicationController
     response = generate_story(config, question)
 
     process = response["Process"]
-    array = [process["Process1"], process["Process2"], process["Process3"], process["Process4"], process["Process5"]]
 
     mission = Mission.new
     mission.title = response["title"]
     mission.progress = 1
     mission.save
 
-    array.each do |res|
+    process.each_value do |value|
       sub = SubMission.new
       sub.mission = mission
-      sub.content = res
+      sub.content = value
       sub.save
     end
 
     render :json => {
       "title": response["title"],
-      "response": array,
+      "response": process,
     }
   end
 
@@ -58,9 +82,14 @@ class ApiController < ApplicationController
 
       # DB2からサブミッション情報を取得します。
       sub = SubMission.where(mission_id: miso.id)
-      sub.each do |submi|
-        process_key = "Process#{json_data[goal_key]["Progress"].size + 1}"
-        json_data[goal_key]["Progress"][process_key] = submi.content
+      sub.each_with_index do |submi, index|
+        if index < 5
+          process_key = "Process#{json_data[goal_key]["Progress"].size + 1}"
+          json_data[goal_key]["Progress"][process_key] = submi.content          
+        else
+          process_key = "Process#{(json_data[goal_key]["Progress"].size) / 5}-#{(json_data[goal_key]["Progress"].size) % 5 + 1}"
+          json_data[goal_key]["Progress"][process_key] = submi.content
+        end
       end
     end
 
