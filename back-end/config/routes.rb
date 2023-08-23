@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   post "ask" => "api#ask"
   get  "all" => "api#all"
+  get  "dumy" => "api#dumy"
 end
