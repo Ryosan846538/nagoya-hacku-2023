@@ -22,12 +22,11 @@ docker compose up
 することで、サーバースタート可能
 
 ## DB
-DBの操作は以下の通り、
-docker compose exec web rails db:create
-DBの作成
-docker compose exec web rails db:migrate
-migrateファイルをもとにDBテーブルの作成
-docker compose exec web rails db:seed
-seedファイルから初期値を作成可能
-docker compose exec web rails db:drop
-DBを削除することが可能 drop->create->migrateでリセットとして動作
+~/back-endで、
+docker compose run --rm -it web bash
+dockerのサーバーないに入ったら
+rails db:create DB作成
+rails db:migrate DBテーブル作成
+rails db:seed 初期データ作成
+rails db:drop DB削除
+drop -> create -> migratetでDBのリセットができる。
