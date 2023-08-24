@@ -34,10 +34,17 @@ docker desktopを起動する
 ## DB
 
 `~/back-end`で、
+
 `docker compose run --rm -it web bash`
+
 dockerのサーバー内に入ったら
+
 `rails db:create DB`：作成
+
 `rails db:migrate DB`：テーブル作成
+
 `rails db:seed`：初期データ作成
+
 `rails db:drop`：DB削除
+
 `drop -> create -> migratet`でDBのリセットができる。
